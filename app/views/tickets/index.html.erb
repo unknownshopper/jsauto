@@ -1,0 +1,46 @@
+<div class="tickets-container">
+  <% if notice %>
+    <div class="flash-message notice">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <div class="header-actions">
+    <h1>Lista de Tickets</h1>
+    <%= link_to 'Nuevo Ticket', new_ticket_path, class: 'btn btn-primary' %>
+  </div>
+
+  <table class="tickets-table">
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Vehículo</th>
+        <th>Placas</th>
+        <th>Servicio</th>
+        <th>Fecha de Ingreso</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.cliente %></td>
+          <td><%= ticket.vehiculo %></td>
+          <td><%= ticket.placas %></td>
+          <td><%= ticket.servicio %></td>
+          <td><%= ticket.fecha_ingreso.strftime('%d/%m/%Y %H:%M') %></td>
+          <td class="actions">
+            <%= link_to 'Ver', ticket_path(ticket), class: 'btn btn-secondary btn-sm' %>
+            <%= link_to 'Editar', edit_ticket_path(ticket), class: 'btn btn-primary btn-sm' %>
+            <%= button_to 'Eliminar',
+                ticket_path(ticket),
+                method: :delete,
+                class: 'btn btn-danger btn-sm',
+                form: { style: 'display: inline-block' },
+                data: { confirm: '¿Estás seguro de que quieres eliminar este ticket?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

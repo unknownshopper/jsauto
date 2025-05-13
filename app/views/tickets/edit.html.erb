@@ -1,0 +1,66 @@
+<%= content_for :title, "Editar Ticket" %>
+
+<h1>Editar Ticket</h1>
+
+<%= form_with(model: @ticket, local: true) do |form| %>
+  <% if @ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ticket.errors.count, "error") %> no permitieron guardar este ticket:</h2>
+
+      <ul>
+        <% @ticket.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cliente %>
+    <%= form.text_field :cliente %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vehiculo %>
+    <%= form.text_field :vehiculo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :placas %>
+    <%= form.text_field :placas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :servicio %>
+    <%= form.select :servicio,
+        Ticket::SERVICIOS,
+        { prompt: 'Selecciona el tipo de servicio' },
+        { class: 'form-select' } %>
+  </div>
+
+  <h3 class="form-section-title">Información de Contacto</h3>
+
+  <div class="field">
+    <%= form.label :telefono %>
+    <%= form.text_field :telefono, placeholder: 'Teléfono del cliente' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :correo %>
+    <%= form.email_field :correo, placeholder: 'Correo electrónico' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comentarios %>
+    <%= form.text_area :comentarios, placeholder: 'Comentarios adicionales', rows: 4 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Actualizar Ticket", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<div class="links mt-3">
+  <%= link_to 'Ver', @ticket, class: "btn btn-info" %> |
+  <%= link_to 'Volver', tickets_path, class: "btn btn-secondary" %>
+</div>

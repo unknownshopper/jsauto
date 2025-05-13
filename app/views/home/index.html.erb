@@ -1,0 +1,21 @@
+<div class="welcome-container">
+  <div class="welcome-content">
+    <div class="logo-section">
+      <%= image_tag "logo.png", alt: "JSAuto Logo", class: "welcome-logo" %>
+    </div>
+
+    <div class="welcome-text">
+      <h1>Bienvenido a JSAuto</h1>
+      <p>Sistema de Gestión de Tickets de Servicio</p>
+    </div>
+
+    <div class="auth-buttons">
+      <% if user_signed_in? %>
+        <%= link_to 'Ir al Sistema', authenticated_root_path, class: 'btn btn-primary' %>
+        <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger' %>
+      <% else %>
+        <%= link_to 'Iniciar Sesión', new_user_session_path, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

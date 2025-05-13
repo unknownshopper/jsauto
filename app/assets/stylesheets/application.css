@@ -1,0 +1,8 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * in this directory and subdirectories. You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS files in this directory.
+ *
+ *= require_tree .
+ *= require_self
+ */

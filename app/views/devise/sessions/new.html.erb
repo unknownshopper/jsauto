@@ -1,0 +1,36 @@
+<div class="auth-page">
+  <div class="auth-container">
+    <div class="auth-header">
+      <%= image_tag "logo.png", alt: "JSAuto Logo", class: "auth-logo" %>
+      <h2>Iniciar Sesión</h2>
+      <p>Ingresa tus credenciales para continuar</p>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'auth-form' }) do |f| %>
+      <div class="field">
+        <%= f.label :email, 'Correo electrónico' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'ejemplo@jsauto.com' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, 'Contraseña' %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: '••••••••' %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field remember-me">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, 'Recordarme' %>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit "Ingresar al Sistema" %>
+      </div>
+    <% end %>
+
+    <div class="auth-links">
+      <%= link_to "Olvidaste tu contraseña?", new_password_path(resource_name) %>
+    </div>
+  </div>
+</div>

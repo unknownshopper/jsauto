@@ -1,0 +1,60 @@
+<%= content_for :title, "Detalles del Ticket" %>
+
+<div class="ticket-details">
+  <h1>Detalles del Ticket</h1>
+
+  <div class="detail-section">
+    <h2>Información Principal</h2>
+    <div class="detail-group">
+      <strong>Cliente:</strong>
+      <%= @ticket.cliente %>
+    </div>
+
+    <div class="detail-group">
+      <strong>Vehículo:</strong>
+      <%= @ticket.vehiculo %>
+    </div>
+
+    <div class="detail-group">
+      <strong>Placas:</strong>
+      <%= @ticket.placas %>
+    </div>
+
+    <div class="detail-group">
+      <strong>Servicio:</strong>
+      <%= @ticket.servicio %>
+    </div>
+
+    <div class="detail-group">
+      <strong>Fecha de Ingreso:</strong>
+      <%= @ticket.fecha_ingreso.strftime('%d/%m/%Y %H:%M') %>
+    </div>
+  </div>
+
+  <div class="detail-section">
+    <h2>Información de Contacto</h2>
+    <div class="detail-group">
+      <strong>Teléfono:</strong>
+      <%= @ticket.telefono.present? ? @ticket.telefono : 'No especificado' %>
+    </div>
+
+    <div class="detail-group">
+      <strong>Correo:</strong>
+      <%= @ticket.correo.present? ? @ticket.correo : 'No especificado' %>
+    </div>
+  </div>
+
+  <% if @ticket.comentarios.present? %>
+    <div class="detail-section">
+      <h2>Comentarios</h2>
+      <div class="detail-group comments">
+        <%= simple_format(@ticket.comentarios) %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="actions mt-3">
+    <%= link_to 'Editar', edit_ticket_path(@ticket), class: "btn btn-primary" %> |
+    <%= link_to 'Volver', tickets_path, class: "btn btn-secondary" %>
+  </div>
+</div>

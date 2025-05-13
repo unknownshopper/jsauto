@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jsauto</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="app-header">
+      <div class="logo-container">
+        <%= image_tag "logo.png", alt: "JSAuto Logo", class: "company-logo" %>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <% if notice || alert %>
+        <div class="flash-messages">
+          <% if notice %>
+            <div class="notice"><%= notice %></div>
+          <% end %>
+          <% if alert %>
+            <div class="alert"><%= alert %></div>
+          <% end %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </main>
+  </body>
+</html>

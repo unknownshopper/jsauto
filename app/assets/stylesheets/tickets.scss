@@ -1,0 +1,238 @@
+// Place all the styles related to the Tickets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// Variables
+$primary-color: #4a90e2;
+$secondary-color: #f5f6fa;
+$success-color: #2ecc71;
+$danger-color: #e74c3c;
+$text-color: #2c3e50;
+$border-radius: 8px;
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+// General Styles
+.tickets-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  
+  h1 {
+    font-size: 2.5rem;
+    color: $text-color;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+}
+
+// Table Styles
+.tickets-table {
+  width: 100%;
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  margin-top: 2rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+
+  th {
+    background: $secondary-color;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: $text-color;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  td {
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    vertical-align: middle;
+  }
+
+  tr:hover {
+    background-color: rgba($primary-color, 0.05);
+  }
+}
+
+// Form Styles
+.ticket-form {
+  background: white;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  max-width: 600px;
+  margin: 0 auto;
+
+  .field {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: $text-color;
+      font-weight: 500;
+    }
+
+    input[type='text'],
+    select.form-select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      background-color: white;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+      }
+    }
+
+    select.form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.8rem center;
+      background-size: 16px 12px;
+      padding-right: 2.5rem;
+
+      &:focus {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%234a90e2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+      }
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: $border-radius;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+
+  &-primary {
+    background: $primary-color;
+    color: white;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+      transform: translateY(-1px);
+    }
+  }
+
+  &-secondary {
+    background: $secondary-color;
+    color: $text-color;
+
+    &:hover {
+      background: darken($secondary-color, 5%);
+    }
+  }
+
+  &-danger {
+    background: $danger-color;
+    color: white;
+
+    &:hover {
+      background: darken($danger-color, 10%);
+    }
+  }
+}
+
+// Card Styles
+.ticket-details {
+  .card {
+    background: white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    margin-top: 1.5rem;
+
+    .card-body {
+      padding: 2rem;
+
+      p {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        
+        strong {
+          color: $text-color;
+          font-weight: 600;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+// Flash Messages
+.flash-message {
+  padding: 1rem;
+  border-radius: $border-radius;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+
+  &.notice {
+    background: rgba($success-color, 0.1);
+    color: $success-color;
+    border: 1px solid rgba($success-color, 0.2);
+  }
+
+  &.alert {
+    background: rgba($danger-color, 0.1);
+    color: $danger-color;
+    border: 1px solid rgba($danger-color, 0.2);
+  }
+}
+
+// Error Messages
+#error_explanation {
+  background: rgba($danger-color, 0.1);
+  border: 1px solid rgba($danger-color, 0.2);
+  padding: 1rem;
+  border-radius: $border-radius;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    color: $danger-color;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    
+    li {
+      color: $danger-color;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .tickets-container {
+    padding: 1rem;
+  }
+
+  .tickets-table {
+    th, td {
+      padding: 0.75rem;
+    }
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+  }
+}

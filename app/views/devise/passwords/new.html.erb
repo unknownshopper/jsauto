@@ -1,0 +1,26 @@
+<div class="auth-page">
+  <div class="auth-container">
+    <div class="auth-header">
+      <%= image_tag "logo.png", alt: "JSAuto Logo", class: "auth-logo" %>
+      <h2>Recuperar Contraseña</h2>
+      <p>Ingresa tu correo electrónico para recibir instrucciones</p>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'auth-form' }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email, 'Correo electrónico' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'ejemplo@jsauto.com' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Enviar Instrucciones" %>
+      </div>
+    <% end %>
+
+    <div class="auth-links">
+      <%= link_to "Volver al inicio de sesión", new_session_path(resource_name) %>
+    </div>
+  </div>
+</div>
