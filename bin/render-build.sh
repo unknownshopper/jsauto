@@ -2,8 +2,12 @@
 # exit on error
 set -o errexit
 
+# Install dependencies
 bundle install
-bundle exec rails assets:precompile
-bundle exec rails assets:clean
-bundle exec rails db:migrate
-bundle exec rails db:seed
+
+# Compile assets
+BUNDLE_WITHOUT=development:test bundle exec rake assets:precompile
+
+# Set up database
+bundle exec rake db:migrate
+bundle exec rake db:seed
