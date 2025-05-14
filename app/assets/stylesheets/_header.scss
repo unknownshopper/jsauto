@@ -1,0 +1,46 @@
+// app/assets/stylesheets/_header.scss
+
+.main-header {
+  background-color: #ffffff; // Fondo blanco para el header
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0; // Un borde sutil
+  display: flex;
+  align-items: center;
+  justify-content: center; // Centra el contenido (el logo)
+  position: relative; // Para posicionar el botón de logout de forma absoluta
+
+  .logo-link {
+    display: inline-block; // Para que el enlace no ocupe todo el ancho
+  }
+
+  .logout-button-container {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%); // Centra verticalmente el botón
+
+    .btn-logout {
+      background-color: #e74c3c; // Un rojo suave, menos estridente
+      border: 1px solid #c0392b; // Borde un poco más oscuro para definirlo
+      color: #ffffff; // Texto blanco
+      padding: 6px 12px; // Un poco menos de padding vertical
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-radius: 4px; // Esquinas redondeadas
+      transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out; // Transición suave
+
+      i {
+        margin-right: 5px;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: #c0392b; // Rojo más oscuro al pasar el mouse o enfocar
+        border-color: #a93226;
+        color: #ffffff;
+        text-decoration: none;
+        outline: none; // Quitar el outline por defecto al enfocar
+      }
+    }
+  }
+}

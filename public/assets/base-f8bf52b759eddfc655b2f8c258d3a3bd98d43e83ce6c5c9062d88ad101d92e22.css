@@ -1,0 +1,137 @@
+/* line 8, app/assets/stylesheets/base.scss */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: #fff;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 20, app/assets/stylesheets/base.scss */
+.app-header .header {
+  background: #4361ee;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* line 29, app/assets/stylesheets/base.scss */
+.app-header .logo {
+  height: 60px;
+}
+
+/* line 33, app/assets/stylesheets/base.scss */
+.app-header .logout-btn {
+  background: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* line 40, app/assets/stylesheets/base.scss */
+.app-header .logout-btn:hover {
+  background: #c82333;
+  color: white;
+}
+
+/* line 48, app/assets/stylesheets/base.scss */
+body {
+  padding-top: 80px;
+}
+
+/* line 53, app/assets/stylesheets/base.scss */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* line 60, app/assets/stylesheets/base.scss */
+.form-section-title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+/* line 68, app/assets/stylesheets/base.scss */
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* line 77, app/assets/stylesheets/base.scss */
+textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+/* line 85, app/assets/stylesheets/base.scss */
+.detail-section {
+  background: white;
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* line 92, app/assets/stylesheets/base.scss */
+.detail-section h2 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+/* line 101, app/assets/stylesheets/base.scss */
+.detail-group {
+  margin-bottom: 1rem;
+}
+
+/* line 104, app/assets/stylesheets/base.scss */
+.detail-group strong {
+  display: inline-block;
+  min-width: 120px;
+  color: #666;
+}
+
+/* line 110, app/assets/stylesheets/base.scss */
+.detail-group.comments {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+/* line 116, app/assets/stylesheets/base.scss */
+.detail-group.comments p {
+  margin: 0 0 0.5rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  /* line 125, app/assets/stylesheets/base.scss */
+  .app-header {
+    padding: 0.5rem 0;
+  }
+  /* line 129, app/assets/stylesheets/base.scss */
+  .company-logo {
+    max-height: 60px;
+  }
+}

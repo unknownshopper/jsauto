@@ -1,0 +1,69 @@
+// Variables de colores (mismos que status_dots.scss)
+$color-verde: #28a745;
+$color-naranja: #fd7e14;
+$color-negro: #212529;
+
+// Estilos del timeline
+.timeline-container {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+// Estados del proceso
+.timeline-proceso {
+  background-color: rgba($color-verde, 0.2) !important;
+  border-color: $color-verde !important;
+  color: darken($color-verde, 10%) !important;
+}
+
+// Estados de pago
+.timeline-pago-pendiente {
+  background-color: rgba($color-naranja, 0.2) !important;
+  border-color: $color-naranja !important;
+  color: darken($color-naranja, 10%) !important;
+}
+
+.timeline-pagado {
+  background-color: rgba($color-verde, 0.2) !important;
+  border-color: $color-verde !important;
+  color: darken($color-verde, 10%) !important;
+}
+
+// Estados de entrega
+.timeline-pendiente {
+  border-style: dashed !important;
+}
+
+.timeline-listo {
+  background-color: rgba($color-verde, 0.3) !important;
+  border-color: $color-verde !important;
+  border-width: 2px !important;
+}
+
+.timeline-entregado {
+  background-color: rgba($color-negro, 0.1) !important;
+  border-color: $color-negro !important;
+  color: $color-negro !important;
+  border-width: 2px !important;
+}
+
+// Grupos del timeline
+.vis-labelset .vis-label {
+  font-weight: 500;
+  color: #6c757d;
+  padding: 0.5rem;
+}
+
+// Personalización del timeline
+.vis-item {
+  border-radius: 4px !important;
+  border-width: 1px !important;
+  
+  .vis-item-content {
+    padding: 0.3rem 0.6rem !important;
+    font-size: 0.9rem !important;
+  }
+}

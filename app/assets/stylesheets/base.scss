@@ -1,49 +1,281 @@
-// Custom variables
-$primary-color: #4a90e2;
-$danger-color: #e74c3c;
-$success-color: #2ecc71;
-$border-radius: 4px;
+// Variables
+$primary-color: #4361ee;
+$secondary-color: #f8f9fa;
+$accent-color: #3f37c9;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$text-color: #2b2d42;
+$border-radius: 10px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+$transition: all 0.3s ease;
 
-// Header styles
-.app-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  display: flex;
-  justify-content: center; // Centra horizontalmente
-  align-items: center;    // Centra verticalmente
+// Tipografía
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
 
-  .logo-link {
-    display: block;
-    line-height: 0; // Elimina espacio extra debajo de la imagen
+// Reset y estilos base
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: $text-color;
+  background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// Container principal
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// Estilos generales
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: $transition;
+  
+  &:hover {
+    color: darken($primary-color, 10%);
   }
+}
 
-  .company-logo {
-    height: 60px;
-    width: auto;
-    transition: transform 0.3s ease;
+button, .btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: $border-radius;
+  border: none;
+  transition: $transition;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.3);
+  }
+}
 
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: $text-color;
+}
+
+// Inputs y Forms
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: $border-radius;
+  background-color: white;
+  width: 100%;
+  transition: $transition;
+  
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+  }
+}
+
+// Grid y Layout
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+
+// Welcome page styles
+.welcome-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+  padding: 2rem;
+}
+
+.welcome-content {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: 3rem 2rem;
+}
+
+.welcome-header {
+  margin-bottom: 2rem;
+  
+  .welcome-logo {
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+}
+
+.welcome-text {
+  margin-bottom: 3rem;
+  
+  h1 {
+    font-size: 2.5rem;
+    color: $text-color;
+    margin-bottom: 1rem;
+    font-weight: $font-weight-bold;
+  }
+  
+  .lead {
+    font-size: 1.25rem;
+    color: lighten($text-color, 20%);
+    margin-bottom: 3rem;
+  }
+}
+
+.welcome-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  
+  .feature {
+    padding: 1.5rem;
+    background: $secondary-color;
+    border-radius: $border-radius;
+    transition: $transition;
+    
     &:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
+      box-shadow: $box-shadow;
+    }
+    
+    i {
+      font-size: 2rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+    
+    h3 {
+      font-size: 1.25rem;
+      color: $text-color;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      color: lighten($text-color, 20%);
+      font-size: 0.9rem;
     }
   }
 }
 
-// Ajuste para el contenido principal
-body {
-  padding-top: 80px; // Mismo alto que el header
+// Estilos de tipografía
+
+// Flash Messages
+.flash-messages {
+  margin: 1rem;
+
+  .notice,
+  .alert {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  .notice {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .alert {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
 }
 
-// Main content wrapper
+// Navbar
+.navbar {
+  padding: 1rem;
+  background: $primary-color !important;
+  box-shadow: $box-shadow;
+  margin-bottom: 2rem;
+
+  .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    padding: 0;
+  }
+
+  form {
+    margin-left: auto;
+  }
+
+  .btn-danger {
+    background-color: $danger-color;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: $border-radius;
+    font-weight: $font-weight-medium;
+    transition: $transition;
+
+    &:hover {
+      background-color: darken($danger-color, 10%);
+      transform: translateY(-1px);
+      box-shadow: $box-shadow;
+    }
+
+    i {
+      margin-right: 8px;
+    }
+  }
+}
+
+// Main Content
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 2rem;
 }
 
 // Form styles
@@ -96,27 +328,123 @@ textarea {
     min-width: 120px;
     color: #666;
   }
+}
 
-  &.comments {
-    margin-top: 1rem;
-    padding: 1rem;
-    background: #f8f9fa;
-    border-radius: $border-radius;
+// Auth pages styles
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f7ff;
+  padding: 2rem;
+}
 
-    p {
-      margin: 0 0 0.5rem;
-      line-height: 1.5;
+.auth-container {
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  .auth-logo {
+    height: 80px;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: $text-color;
+    margin-bottom: 0.5rem;
+    font-weight: $font-weight-bold;
+  }
+
+  p {
+    color: lighten($text-color, 20%);
+    margin-bottom: 0;
+  }
+}
+
+.auth-form {
+  .field {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: $text-color;
+      font-weight: $font-weight-medium;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      transition: $transition;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+      }
+    }
+  }
+
+  .remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    label {
+      margin: 0;
+      color: lighten($text-color, 20%);
+    }
+  }
+
+  .actions {
+    input[type="submit"] {
+      width: 100%;
+      padding: 0.75rem;
+      background: $primary-color;
+      color: white;
+      border: none;
+      border-radius: $border-radius;
+      font-weight: $font-weight-medium;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+        transform: translateY(-1px);
+        box-shadow: $box-shadow;
+      }
     }
   }
 }
 
-// Responsive adjustments
-@media (max-width: 768px) {
-  .app-header {
-    padding: 0.5rem 0;
-  }
+.auth-links {
+  text-align: center;
+  margin-top: 1.5rem;
 
-  .company-logo {
-    max-height: 60px;
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    transition: $transition;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+      text-decoration: underline;
+    }
   }
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_05_14_000510) do
+ActiveRecord::Schema.define(version: 2025_05_14_214932) do
 
   create_table "services", force: :cascade do |t|
     t.string "client"
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 2025_05_14_000510) do
     t.string "correo"
     t.text "comentarios"
     t.date "fecha_entrega"
+    t.boolean "proceso"
+    t.boolean "pago"
+    t.string "entrega"
   end
 
   create_table "users", force: :cascade do |t|

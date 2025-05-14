@@ -33,9 +33,26 @@
   <div class="field">
     <%= form.label :servicio %>
     <%= form.select :servicio,
-        Ticket::SERVICIOS,
+        Ticket::SERVICIOS_DISPONIBLES,
         { prompt: 'Selecciona el tipo de servicio' },
         { class: 'form-select' } %>
+  </div>
+
+  <h3 class="form-section-title">Estado del Servicio</h3>
+
+  <div class="field status-fields">
+    <div class="status-field">
+      <%= form.label :pago, 'Pagado' %>
+      <%= form.check_box :pago %>
+    </div>
+
+    <div class="status-field">
+      <%= form.label :entrega, 'Estado de Entrega' %>
+      <%= form.select :entrega,
+          Ticket.entregas.keys.map { |k| [k.titleize, k] },
+          { prompt: 'Selecciona el estado' },
+          { class: 'form-select' } %>
+    </div>
   </div>
 
   <h3 class="form-section-title">Información de Contacto</h3>

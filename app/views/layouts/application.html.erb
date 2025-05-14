@@ -18,10 +18,15 @@
   </head>
 
   <body>
-    <header class="app-header">
+    <header class="main-header">
       <%= link_to root_path, class: "logo-link" do %>
-        <%= image_tag "logo.png", alt: "JSAuto Logo", class: "company-logo" %>
+        <%= image_tag "logo.png", height: 60, alt: "JSAuto Logo" %>
       <% end %>
+      <div class="logout-button-container">
+        <%= button_to destroy_user_session_path, method: :delete, class: "btn-logout" do %>
+          <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+        <% end %>
+      </div>
     </header>
 
     <main class="main-content">

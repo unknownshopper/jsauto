@@ -5,7 +5,22 @@
     </div>
   <% end %>
 
- 
+  <div class="row mt-4">
+  <div class="col-md-8">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Línea de Tiempo de Servicios</h2>
+          <div id="delivery-timeline" class="timeline-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+    <h2 class="card-title">Búsquedas</h2>
+    </div>      
+  </div>
 
   <div class="filters-section card mb-4">
     <div class="card-body">
@@ -27,12 +42,22 @@
 
           <div class="search-field">
             <label class="form-label">Fecha Desde</label>
-            <%= date_field_tag :fecha_desde, params[:fecha_desde], class: 'form-control' %>
+            <%= text_field_tag :fecha_desde, params[:fecha_desde]&.strftime('%d/%m/%y'), 
+                class: 'form-control', 
+                data: { controller: 'datepicker' }, 
+                placeholder: 'DD/MM/YY', 
+                pattern: '\d{2}/\d{2}/\d{2}', 
+                title: 'Formato: DD/MM/YY' %>
           </div>
 
           <div class="search-field">
             <label class="form-label">Fecha Hasta</label>
-            <%= date_field_tag :fecha_hasta, params[:fecha_hasta], class: 'form-control' %>
+            <%= text_field_tag :fecha_hasta, params[:fecha_hasta]&.strftime('%d/%m/%y'), 
+                class: 'form-control', 
+                data: { controller: 'datepicker' }, 
+                placeholder: 'DD/MM/YY', 
+                pattern: '\d{2}/\d{2}/\d{2}', 
+                title: 'Formato: DD/MM/YY' %>
           </div>
 
           <div class="search-actions">
@@ -43,28 +68,10 @@
       <% end %>
     </div>
   </div>
+ 
 
-  <div class="row mt-4">
-    <div class="col-md-4">
-      <div class="card mb-4">
-        <div class="card-body">
-          <h5 class="card-title">Servicios por Tipo</h5>
-          <%= pie_chart @tickets_by_service,
-              colors: ["#4361ee", "#3f37c9", "#28a745", "#ffc107"],
-              legend: "bottom",
-              donut: true %>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <div class="card mb-4">
-        <div class="card-body">
-          <h5 class="card-title">Línea de Tiempo de Servicios</h5>
-          <div id="delivery-timeline" class="timeline-container"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+  
 
   <% content_for :head do %>
     <link href="https://unpkg.com/vis-timeline@7.7.2/dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
@@ -76,18 +83,18 @@
       var container = document.getElementById('delivery-timeline');
       var items = new vis.DataSet(<%= raw @delivery_timeline.to_json %>);
 
+      var groups = new vis.DataSet([
+        { id: 1, content: 'En Proceso' },
+        { id: 2, content: 'Pagados' },
+        { id: 3, content: 'Entregados' }
+      ]);
+
       var options = {
+        width: '100%',
         height: '300px',
-        locale: 'es',
-        verticalScroll: true,
-        horizontalScroll: true,
-        stack: true,
-        showCurrentTime: true,
         margin: {
-          item: {
-            horizontal: 5,
-            vertical: 8
-          }
+          item: 10,
+          axis: 5
         },
         format: {
           minorLabels: {
@@ -101,20 +108,59 @@
         }
       };
 
-      var timeline = new vis.Timeline(container, items, options);
+      var timeline = new vis.Timeline(container, items, groups, options);
     });
   </script>
 
   <div class="header-actions">
-    <h1>Lista de Tickets</h1>
+    <h2>Timeline de Tickets</h2>
     <%= link_to new_ticket_path, class: 'btn btn-primary' do %>
       <i class="fas fa-plus-circle me-2"></i> Nuevo Ticket
     <% end %>
   </div>
 
+  <div class="status-legend card mb-4">
+    <div class="card-body">
+      <div class="legend-items">
+        <div class="legend-group">
+          <div class="legend-subtitle">Proceso:</div>
+          <div class="legend-item">
+            <span class="dot dot-proceso"></span>
+            <span class="legend-text">En proceso</span>
+          </div>
+        </div>
+
+        <div class="legend-group">
+          <div class="legend-subtitle">Pago:</div>
+          <div class="legend-item">
+            <span class="dot dot-pago-pendiente"></span>
+            <span class="legend-text">Pendiente</span>
+          </div>
+          <div class="legend-item">
+            <span class="dot dot-pago-completado"></span>
+            <span class="legend-text">Pagado</span>
+          </div>
+        </div>
+
+        <div class="legend-group">
+          <div class="legend-subtitle">Entrega:</div>
+          <div class="legend-item">
+            <span class="dot dot-listo"></span>
+            <span class="legend-text">Listo</span>
+          </div>
+          <div class="legend-item">
+            <span class="dot dot-entregado"></span>
+            <span class="legend-text">Entregado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <table class="tickets-table">
     <thead>
       <tr>
+        <th>Status</th>
         <th>Cliente</th>
         <th>Vehículo</th>
         <th>Placas</th>
@@ -127,6 +173,14 @@
     <tbody>
       <% @tickets.each do |ticket| %>
         <tr>
+          <td class="status-dots">
+            <span class="dot dot-proceso" title="En proceso"></span>
+            <span class="dot <%= ticket.pago ? 'dot-pago-completado' : 'dot-pago-pendiente' %>" 
+                  title="<%= ticket.pago ? 'Pagado' : 'Pago pendiente' %>"></span>
+            <span class="dot <%= ticket.entrega == 'entregado' ? 'dot-entregado' : 
+                                  ticket.entrega == 'listo' ? 'dot-listo' : '' %>" 
+                  title="<%= ticket.entrega&.capitalize %>"></span>
+          </td>
           <td><%= ticket.cliente %></td>
           <td><%= ticket.vehiculo %></td>
           <td><%= ticket.placas %></td>
@@ -147,4 +201,18 @@
       <% end %>
     </tbody>
   </table>
+  <div class="row mt-4">
+    
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Servicios por Tipo</h2>
+          <%= pie_chart @tickets_by_service, colors: ["#0D47A1", "#1976D2", "#42A5F5", "#90CAF9", "#607D8B", "#9E9E9E", "#BDBDBD", "#E0E0E0", "#37474F"], legend: "bottom", donut: true %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<footer class="text-center mt-4">
+  <h3>Powered by <a href="https://unknownshoppers.com" class="text-decoration-none">The Unknown Shopper</a> | &copy; 2025</h3>
+</footer>

@@ -466,7 +466,28 @@ $font-weight-bold: 700;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     margin-top: 1.5rem;
+  }
 
+  footer {
+    margin-bottom: 2rem;
+    
+    h3 {
+      color: #666;
+      font-size: 1rem;
+      margin: 0;
+      
+      a {
+        color: inherit;
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .card {
     .card-body {
       padding: 2rem;
 

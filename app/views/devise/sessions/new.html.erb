@@ -1,11 +1,8 @@
 <div class="auth-page">
   <div class="auth-container">
     <div class="auth-header">
-      <%= image_tag "logo.png", alt: "JSAuto Logo", class: "auth-logo" %>
-      <h2>Iniciar Sesión</h2>
-      <p>Ingresa tus credenciales para continuar</p>
+     
     </div>
-
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'auth-form' }) do |f| %>
       <div class="field">
         <%= f.label :email, 'Correo electrónico' %>

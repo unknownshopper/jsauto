@@ -1,0 +1,270 @@
+/* line 19, app/assets/stylesheets/base.scss */
+.flash-messages {
+  margin: 1rem;
+}
+
+/* line 22, app/assets/stylesheets/base.scss */
+.flash-messages .notice,
+.flash-messages .alert {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* line 29, app/assets/stylesheets/base.scss */
+.flash-messages .notice {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* line 34, app/assets/stylesheets/base.scss */
+.flash-messages .alert {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* line 41, app/assets/stylesheets/base.scss */
+.navbar {
+  padding: 1rem;
+  background: #4361ee !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+/* line 47, app/assets/stylesheets/base.scss */
+.navbar .container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 55, app/assets/stylesheets/base.scss */
+.navbar .navbar-brand {
+  padding: 0;
+}
+
+/* line 59, app/assets/stylesheets/base.scss */
+.navbar form {
+  margin-left: auto;
+}
+
+/* line 63, app/assets/stylesheets/base.scss */
+.navbar .btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* line 72, app/assets/stylesheets/base.scss */
+.navbar .btn-danger:hover {
+  background-color: #bd2130;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* line 78, app/assets/stylesheets/base.scss */
+.navbar .btn-danger i {
+  margin-right: 8px;
+}
+
+/* line 85, app/assets/stylesheets/base.scss */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* line 92, app/assets/stylesheets/base.scss */
+.form-section-title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+/* line 100, app/assets/stylesheets/base.scss */
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* line 109, app/assets/stylesheets/base.scss */
+textarea:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.1);
+}
+
+/* line 117, app/assets/stylesheets/base.scss */
+.detail-section {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* line 124, app/assets/stylesheets/base.scss */
+.detail-section h2 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+/* line 133, app/assets/stylesheets/base.scss */
+.detail-group {
+  margin-bottom: 1rem;
+}
+
+/* line 136, app/assets/stylesheets/base.scss */
+.detail-group strong {
+  display: inline-block;
+  min-width: 120px;
+  color: #666;
+}
+
+/* line 144, app/assets/stylesheets/base.scss */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f7ff;
+  padding: 2rem;
+}
+
+/* line 153, app/assets/stylesheets/base.scss */
+.auth-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* line 162, app/assets/stylesheets/base.scss */
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* line 166, app/assets/stylesheets/base.scss */
+.auth-header .auth-logo {
+  height: 80px;
+  margin-bottom: 1.5rem;
+}
+
+/* line 171, app/assets/stylesheets/base.scss */
+.auth-header h2 {
+  font-size: 1.5rem;
+  color: #2b2d42;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+/* line 178, app/assets/stylesheets/base.scss */
+.auth-header p {
+  color: #535780;
+  margin-bottom: 0;
+}
+
+/* line 185, app/assets/stylesheets/base.scss */
+.auth-form .field {
+  margin-bottom: 1.5rem;
+}
+
+/* line 188, app/assets/stylesheets/base.scss */
+.auth-form .field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2b2d42;
+  font-weight: 500;
+}
+
+/* line 195, app/assets/stylesheets/base.scss */
+.auth-form .field input[type="email"],
+.auth-form .field input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* line 204, app/assets/stylesheets/base.scss */
+.auth-form .field input[type="email"]:focus,
+.auth-form .field input[type="password"]:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.1);
+}
+
+/* line 212, app/assets/stylesheets/base.scss */
+.auth-form .remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* line 218, app/assets/stylesheets/base.scss */
+.auth-form .remember-me label {
+  margin: 0;
+  color: #535780;
+}
+
+/* line 225, app/assets/stylesheets/base.scss */
+.auth-form .actions input[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background: #4361ee;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* line 236, app/assets/stylesheets/base.scss */
+.auth-form .actions input[type="submit"]:hover {
+  background: #153ae9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* line 245, app/assets/stylesheets/base.scss */
+.auth-links {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* line 249, app/assets/stylesheets/base.scss */
+.auth-links a {
+  color: #4361ee;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* line 255, app/assets/stylesheets/base.scss */
+.auth-links a:hover {
+  color: #153ae9;
+  text-decoration: underline;
+}

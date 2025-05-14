@@ -1,0 +1,75 @@
+// Variables de colores
+$color-verde: #28a745;
+$color-naranja: #fd7e14;
+$color-negro: #212529;
+
+// Estilos base para los dots
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 2px solid rgba(255,255,255,0.8);
+
+  &.dot-proceso { background-color: $color-verde; }
+  &.dot-pago-pendiente { background-color: $color-naranja; }
+  &.dot-pago-completado { background-color: $color-verde; }
+  &.dot-listo { background-color: $color-verde; }
+  &.dot-entregado { background-color: $color-negro; }
+}
+
+// Contenedor de dots en la tabla
+.status-dots {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+// Leyenda de status
+.status-legend {
+  .legend-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #212529;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .legend-group {
+      min-width: 200px;
+
+      .legend-subtitle {
+        font-weight: 500;
+        color: #6c757d;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        padding-left: 0.5rem;
+
+        .legend-text {
+          font-size: 0.9rem;
+          color: #2b2d42;
+        }
+
+        .dot {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+}

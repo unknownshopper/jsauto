@@ -9,4 +9,8 @@ body {
 }
 
 // Importar otros estilos
+@import "header";
 @import "tickets";
+@import "status_dots";
+@import "forms";
+@import "timeline";
