@@ -1,0 +1,75 @@
+// Estilos para las gráficas
+.card {
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+  .card-title {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+}
+
+// Estilos para los badges de estado
+.badge {
+  padding: 0.5em 0.75em;
+  font-size: 0.875em;
+  font-weight: 500;
+  border-radius: 0.25rem;
+
+  &.badge-success {
+    background-color: #28a745;
+    color: white;
+  }
+
+  &.badge-warning {
+    background-color: #ffc107;
+    color: #212529;
+  }
+
+  &.badge-info {
+    background-color: #17a2b8;
+    color: white;
+  }
+
+  &.badge-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+}
+
+// Estilos para la tabla de servicios
+.table {
+  th {
+    background-color: #f8f9fa;
+    border-top: none;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+
+  .btn-sm {
+    margin: 0 0.25rem;
+  }
+}
+
+// Estilos para los formularios
+.form-group {
+  margin-bottom: 1rem;
+
+  label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-control {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+
+    &:focus {
+      border-color: #80bdff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+}
+

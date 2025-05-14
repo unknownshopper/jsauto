@@ -1,0 +1,12 @@
+// Variables globales
+$font-family-base: 'Ubuntu', sans-serif;
+
+// Estilos globales
+body {
+  font-family: $font-family-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Importar otros estilos
+@import "tickets";

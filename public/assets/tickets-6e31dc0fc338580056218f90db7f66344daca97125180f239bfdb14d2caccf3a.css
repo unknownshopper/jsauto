@@ -1,0 +1,246 @@
+/* line 15, app/assets/stylesheets/tickets.scss */
+.tickets-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* line 20, app/assets/stylesheets/tickets.scss */
+.tickets-container h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* line 29, app/assets/stylesheets/tickets.scss */
+.tickets-table {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+/* line 39, app/assets/stylesheets/tickets.scss */
+.tickets-table th {
+  background: #f5f6fa;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* line 50, app/assets/stylesheets/tickets.scss */
+.tickets-table td {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  vertical-align: middle;
+}
+
+/* line 56, app/assets/stylesheets/tickets.scss */
+.tickets-table tr:hover {
+  background-color: rgba(74, 144, 226, 0.05);
+}
+
+/* line 62, app/assets/stylesheets/tickets.scss */
+.ticket-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* line 70, app/assets/stylesheets/tickets.scss */
+.ticket-form .field {
+  margin-bottom: 1.5rem;
+}
+
+/* line 73, app/assets/stylesheets/tickets.scss */
+.ticket-form .field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* line 80, app/assets/stylesheets/tickets.scss */
+.ticket-form .field input[type='text'],
+.ticket-form .field select.form-select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: white;
+}
+
+/* line 90, app/assets/stylesheets/tickets.scss */
+.ticket-form .field input[type='text']:focus,
+.ticket-form .field select.form-select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+/* line 97, app/assets/stylesheets/tickets.scss */
+.ticket-form .field select.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 16px 12px;
+  padding-right: 2.5rem;
+}
+
+/* line 105, app/assets/stylesheets/tickets.scss */
+.ticket-form .field select.form-select:focus {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%234a90e2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+}
+
+/* line 113, app/assets/stylesheets/tickets.scss */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* line 124, app/assets/stylesheets/tickets.scss */
+.btn-primary {
+  background: #4a90e2;
+  color: white;
+}
+
+/* line 128, app/assets/stylesheets/tickets.scss */
+.btn-primary:hover {
+  background: #2275d7;
+  transform: translateY(-1px);
+}
+
+/* line 134, app/assets/stylesheets/tickets.scss */
+.btn-secondary {
+  background: #f5f6fa;
+  color: #2c3e50;
+}
+
+/* line 138, app/assets/stylesheets/tickets.scss */
+.btn-secondary:hover {
+  background: #e4e7f2;
+}
+
+/* line 143, app/assets/stylesheets/tickets.scss */
+.btn-danger {
+  background: #e74c3c;
+  color: white;
+}
+
+/* line 147, app/assets/stylesheets/tickets.scss */
+.btn-danger:hover {
+  background: #d62c1a;
+}
+
+/* line 155, app/assets/stylesheets/tickets.scss */
+.ticket-details .card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+
+/* line 161, app/assets/stylesheets/tickets.scss */
+.ticket-details .card .card-body {
+  padding: 2rem;
+}
+
+/* line 164, app/assets/stylesheets/tickets.scss */
+.ticket-details .card .card-body p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* line 168, app/assets/stylesheets/tickets.scss */
+.ticket-details .card .card-body p strong {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+/* line 179, app/assets/stylesheets/tickets.scss */
+.flash-message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* line 185, app/assets/stylesheets/tickets.scss */
+.flash-message.notice {
+  background: rgba(46, 204, 113, 0.1);
+  color: #2ecc71;
+  border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+/* line 191, app/assets/stylesheets/tickets.scss */
+.flash-message.alert {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+/* line 199, app/assets/stylesheets/tickets.scss */
+#error_explanation {
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* line 206, app/assets/stylesheets/tickets.scss */
+#error_explanation h2 {
+  color: #e74c3c;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* line 212, app/assets/stylesheets/tickets.scss */
+#error_explanation ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+/* line 216, app/assets/stylesheets/tickets.scss */
+#error_explanation ul li {
+  color: #e74c3c;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  /* line 225, app/assets/stylesheets/tickets.scss */
+  .tickets-container {
+    padding: 1rem;
+  }
+  /* line 230, app/assets/stylesheets/tickets.scss */
+  .tickets-table th, .tickets-table td {
+    padding: 0.75rem;
+  }
+  /* line 235, app/assets/stylesheets/tickets.scss */
+  .btn {
+    padding: 0.6rem 1.2rem;
+  }
+}

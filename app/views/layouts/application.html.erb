@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <% if content_for?(:head) %>
+      <%= yield :head %>
+    <% end %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,9 +19,9 @@
 
   <body>
     <header class="app-header">
-      <div class="logo-container">
+      <%= link_to root_path, class: "logo-link" do %>
         <%= image_tag "logo.png", alt: "JSAuto Logo", class: "company-logo" %>
-      </div>
+      <% end %>
     </header>
 
     <main class="main-content">

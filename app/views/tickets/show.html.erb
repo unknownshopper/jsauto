@@ -27,7 +27,12 @@
 
     <div class="detail-group">
       <strong>Fecha de Ingreso:</strong>
-      <%= @ticket.fecha_ingreso.strftime('%d/%m/%Y %H:%M') %>
+      <%= @ticket.fecha_ingreso&.strftime('%d/%m/%Y %H:%M') %>
+    </div>
+
+    <div class="detail-group">
+      <strong>Fecha de Entrega:</strong>
+      <%= @ticket.fecha_entrega&.strftime('%d/%m/%Y') || 'No establecida' %>
     </div>
   </div>
 

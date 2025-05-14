@@ -28,6 +28,10 @@ gem 'jbuilder', '~> 2.11'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.9'
 
+# Charts and Date Handling
+gem 'chartkick', '~> 5.0'
+gem 'groupdate', '~> 6.4'
+
 # Performance
 gem 'bootsnap', '~> 1.18', require: false
 

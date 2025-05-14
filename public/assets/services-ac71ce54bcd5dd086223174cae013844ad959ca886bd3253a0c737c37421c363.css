@@ -1,0 +1,82 @@
+/* line 2, app/assets/stylesheets/services.scss */
+.card {
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* line 6, app/assets/stylesheets/services.scss */
+.card .card-title {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* line 13, app/assets/stylesheets/services.scss */
+.badge {
+  padding: 0.5em 0.75em;
+  font-size: 0.875em;
+  font-weight: 500;
+  border-radius: 0.25rem;
+}
+
+/* line 19, app/assets/stylesheets/services.scss */
+.badge.badge-success {
+  background-color: #28a745;
+  color: white;
+}
+
+/* line 24, app/assets/stylesheets/services.scss */
+.badge.badge-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+/* line 29, app/assets/stylesheets/services.scss */
+.badge.badge-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+/* line 34, app/assets/stylesheets/services.scss */
+.badge.badge-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* line 42, app/assets/stylesheets/services.scss */
+.table th {
+  background-color: #f8f9fa;
+  border-top: none;
+}
+
+/* line 47, app/assets/stylesheets/services.scss */
+.table td {
+  vertical-align: middle;
+}
+
+/* line 51, app/assets/stylesheets/services.scss */
+.table .btn-sm {
+  margin: 0 0.25rem;
+}
+
+/* line 57, app/assets/stylesheets/services.scss */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* line 60, app/assets/stylesheets/services.scss */
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* line 65, app/assets/stylesheets/services.scss */
+.form-group .form-control {
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+}
+
+/* line 69, app/assets/stylesheets/services.scss */
+.form-group .form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}

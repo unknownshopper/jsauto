@@ -1,0 +1,70 @@
+<div class="container mt-4">
+  <div class="row mb-4">
+    <div class="col">
+      <h1>Servicios</h1>
+      <%= link_to 'Nuevo Servicio', new_service_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Estado de Servicios</h5>
+          <%= pie_chart @services_by_status %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Entregas por Día</h5>
+          <%= line_chart @services_by_delivery %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Vehículo</th>
+              <th>Estado</th>
+              <th>Fecha de Entrega</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @services.each do |service| %>
+              <tr>
+                <td><%= service.client %></td>
+                <td><%= service.vehicle %></td>
+                <td>
+                  <span class="badge badge-<%= service.status == 'completado' ? 'success' : 
+                                           service.status == 'en_proceso' ? 'warning' : 
+                                           service.status == 'entregado' ? 'info' : 'secondary' %>">
+                    <%= service.status.humanize %>
+                  </span>
+                </td>
+                <td><%= service.delivery_date.strftime('%d/%m/%Y') %></td>
+                <td>
+                  <%= link_to 'Ver', service_path(service), class: 'btn btn-sm btn-info' %>
+                  <%= link_to 'Editar', edit_service_path(service), class: 'btn btn-sm btn-warning' %>
+                  <%= link_to 'Eliminar', service_path(service), 
+                              method: :delete, 
+                              data: { confirm: '¿Estás seguro?' }, 
+                              class: 'btn btn-sm btn-danger' %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

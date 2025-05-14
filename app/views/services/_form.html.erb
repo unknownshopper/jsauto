@@ -1,0 +1,45 @@
+<%= form_with(model: service, local: true) do |f| %>
+  <% if service.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(service.errors.count, "error") %> impidieron guardar este servicio:</h4>
+      <ul>
+        <% service.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :client, "Cliente" %>
+    <%= f.text_field :client, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :vehicle, "Vehículo" %>
+    <%= f.text_field :vehicle, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description, "Descripción" %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :status, "Estado" %>
+    <%= f.select :status, 
+                Service.statuses.keys.map { |s| [s.humanize, s] },
+                {},
+                class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :delivery_date, "Fecha de entrega" %>
+    <%= f.date_field :delivery_date, class: 'form-control' %>
+  </div>
+
+  <div class="actions mt-3">
+    <%= f.submit "Guardar", class: 'btn btn-primary' %>
+    <%= link_to 'Cancelar', services_path, class: 'btn btn-secondary' %>
+  </div>
+<% end %>

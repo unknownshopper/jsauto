@@ -6,22 +6,37 @@ $border-radius: 4px;
 
 // Header styles
 .app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
-  margin-bottom: 2rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; // Centra horizontalmente
+  align-items: center;    // Centra verticalmente
+
+  .logo-link {
+    display: block;
+    line-height: 0; // Elimina espacio extra debajo de la imagen
+  }
+
+  .company-logo {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 }
 
-.logo-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.company-logo {
-  max-height: 80px;
-  width: auto;
+// Ajuste para el contenido principal
+body {
+  padding-top: 80px; // Mismo alto que el header
 }
 
 // Main content wrapper

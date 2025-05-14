@@ -1,16 +1,19 @@
 class Ticket < ApplicationRecord
-  SERVICIOS = [
+  SERVICIOS_DISPONIBLES = [
     'Servicio mecánico',
     'Servicio eléctrico',
-    'Caja de velocidades',
-    'Hojalatería y pintura'
+    'Carrocería y pintura',
+    'Afinación',
+    'Frenos',
+    'Suspensión',
+    'Diagnóstico general',
+    'Cambio de aceite',
+    'Alineación y balanceo'
   ].freeze
 
-  validates :cliente, presence: true
-  validates :vehiculo, presence: true
-  validates :placas, presence: true
-  validates :servicio, presence: true, inclusion: { in: SERVICIOS }
-  validates :fecha_ingreso, presence: true
+  validates :cliente, :vehiculo, :placas, :servicio, presence: true
+  validates :fecha_entrega, presence: true
+  validates :servicio, inclusion: { in: SERVICIOS_DISPONIBLES }
 
   before_validation :set_fecha_ingreso, on: :create
 

@@ -1,0 +1,71 @@
+/* line 1, app/assets/stylesheets/home.scss */
+.welcome-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+}
+
+/* line 10, app/assets/stylesheets/home.scss */
+.welcome-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* line 20, app/assets/stylesheets/home.scss */
+.logo-section {
+  margin-bottom: 2rem;
+}
+
+/* line 23, app/assets/stylesheets/home.scss */
+.logo-section .welcome-logo {
+  max-width: 200px;
+  height: auto;
+}
+
+/* line 29, app/assets/stylesheets/home.scss */
+.welcome-text {
+  margin-bottom: 2rem;
+}
+
+/* line 32, app/assets/stylesheets/home.scss */
+.welcome-text h1 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* line 38, app/assets/stylesheets/home.scss */
+.welcome-text p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* line 45, app/assets/stylesheets/home.scss */
+.auth-buttons .btn {
+  margin: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 576px) {
+  /* line 53, app/assets/stylesheets/home.scss */
+  .welcome-content {
+    padding: 2rem;
+  }
+  /* line 57, app/assets/stylesheets/home.scss */
+  .welcome-text h1 {
+    font-size: 1.75rem;
+  }
+  /* line 61, app/assets/stylesheets/home.scss */
+  .welcome-logo {
+    max-width: 150px;
+  }
+}

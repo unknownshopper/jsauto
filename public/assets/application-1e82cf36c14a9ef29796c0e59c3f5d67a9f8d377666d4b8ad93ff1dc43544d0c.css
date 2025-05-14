@@ -1,0 +1,674 @@
+/* line 1, app/assets/stylesheets/auth.scss */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+}
+
+/* line 10, app/assets/stylesheets/auth.scss */
+.auth-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* line 19, app/assets/stylesheets/auth.scss */
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* line 23, app/assets/stylesheets/auth.scss */
+.auth-header .auth-logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* line 29, app/assets/stylesheets/auth.scss */
+.auth-header h2 {
+  color: #2c3e50;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* line 35, app/assets/stylesheets/auth.scss */
+.auth-header p {
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+/* line 42, app/assets/stylesheets/auth.scss */
+.auth-form .field {
+  margin-bottom: 1.5rem;
+}
+
+/* line 45, app/assets/stylesheets/auth.scss */
+.auth-form .field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #34495e;
+  font-weight: 500;
+}
+
+/* line 52, app/assets/stylesheets/auth.scss */
+.auth-form .field input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* line 60, app/assets/stylesheets/auth.scss */
+.auth-form .field input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* line 68, app/assets/stylesheets/auth.scss */
+.auth-form .actions {
+  margin-top: 2rem;
+}
+
+/* line 71, app/assets/stylesheets/auth.scss */
+.auth-form .actions input[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* line 83, app/assets/stylesheets/auth.scss */
+.auth-form .actions input[type="submit"]:hover {
+  background-color: #2275d7;
+}
+
+/* line 90, app/assets/stylesheets/auth.scss */
+.auth-links {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* line 95, app/assets/stylesheets/auth.scss */
+.auth-links a {
+  color: #4a90e2;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+/* line 100, app/assets/stylesheets/auth.scss */
+.auth-links a:hover {
+  color: #1f69c1;
+}
+
+/* line 107, app/assets/stylesheets/auth.scss */
+.flash-messages {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+/* line 113, app/assets/stylesheets/auth.scss */
+.flash-messages .alert, .flash-messages .notice {
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* line 119, app/assets/stylesheets/auth.scss */
+.flash-messages .alert.alert, .flash-messages .notice.alert {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+/* line 124, app/assets/stylesheets/auth.scss */
+.flash-messages .alert.notice, .flash-messages .notice.notice {
+  background-color: #51cf66;
+  color: white;
+}
+
+@media (max-width: 576px) {
+  /* line 132, app/assets/stylesheets/auth.scss */
+  .auth-container {
+    padding: 2rem;
+  }
+  /* line 137, app/assets/stylesheets/auth.scss */
+  .auth-header h2 {
+    font-size: 1.5rem;
+  }
+}
+/* line 8, app/assets/stylesheets/base.scss */
+.app-header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+/* line 15, app/assets/stylesheets/base.scss */
+.logo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* line 22, app/assets/stylesheets/base.scss */
+.company-logo {
+  max-height: 80px;
+  width: auto;
+}
+
+/* line 28, app/assets/stylesheets/base.scss */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* line 35, app/assets/stylesheets/base.scss */
+.form-section-title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+/* line 43, app/assets/stylesheets/base.scss */
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* line 52, app/assets/stylesheets/base.scss */
+textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+/* line 60, app/assets/stylesheets/base.scss */
+.detail-section {
+  background: white;
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* line 67, app/assets/stylesheets/base.scss */
+.detail-section h2 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+/* line 76, app/assets/stylesheets/base.scss */
+.detail-group {
+  margin-bottom: 1rem;
+}
+
+/* line 79, app/assets/stylesheets/base.scss */
+.detail-group strong {
+  display: inline-block;
+  min-width: 120px;
+  color: #666;
+}
+
+/* line 85, app/assets/stylesheets/base.scss */
+.detail-group.comments {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+/* line 91, app/assets/stylesheets/base.scss */
+.detail-group.comments p {
+  margin: 0 0 0.5rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  /* line 100, app/assets/stylesheets/base.scss */
+  .app-header {
+    padding: 0.5rem 0;
+  }
+  /* line 104, app/assets/stylesheets/base.scss */
+  .company-logo {
+    max-height: 60px;
+  }
+}
+/* line 1, app/assets/stylesheets/home.scss */
+.welcome-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+}
+
+/* line 10, app/assets/stylesheets/home.scss */
+.welcome-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* line 20, app/assets/stylesheets/home.scss */
+.logo-section {
+  margin-bottom: 2rem;
+}
+
+/* line 23, app/assets/stylesheets/home.scss */
+.logo-section .welcome-logo {
+  max-width: 200px;
+  height: auto;
+}
+
+/* line 29, app/assets/stylesheets/home.scss */
+.welcome-text {
+  margin-bottom: 2rem;
+}
+
+/* line 32, app/assets/stylesheets/home.scss */
+.welcome-text h1 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* line 38, app/assets/stylesheets/home.scss */
+.welcome-text p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* line 45, app/assets/stylesheets/home.scss */
+.auth-buttons .btn {
+  margin: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 576px) {
+  /* line 53, app/assets/stylesheets/home.scss */
+  .welcome-content {
+    padding: 2rem;
+  }
+  /* line 57, app/assets/stylesheets/home.scss */
+  .welcome-text h1 {
+    font-size: 1.75rem;
+  }
+  /* line 61, app/assets/stylesheets/home.scss */
+  .welcome-logo {
+    max-width: 150px;
+  }
+}
+/* line 2, app/assets/stylesheets/services.scss */
+.card {
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* line 6, app/assets/stylesheets/services.scss */
+.card .card-title {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* line 13, app/assets/stylesheets/services.scss */
+.badge {
+  padding: 0.5em 0.75em;
+  font-size: 0.875em;
+  font-weight: 500;
+  border-radius: 0.25rem;
+}
+
+/* line 19, app/assets/stylesheets/services.scss */
+.badge.badge-success {
+  background-color: #28a745;
+  color: white;
+}
+
+/* line 24, app/assets/stylesheets/services.scss */
+.badge.badge-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+/* line 29, app/assets/stylesheets/services.scss */
+.badge.badge-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+/* line 34, app/assets/stylesheets/services.scss */
+.badge.badge-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* line 42, app/assets/stylesheets/services.scss */
+.table th {
+  background-color: #f8f9fa;
+  border-top: none;
+}
+
+/* line 47, app/assets/stylesheets/services.scss */
+.table td {
+  vertical-align: middle;
+}
+
+/* line 51, app/assets/stylesheets/services.scss */
+.table .btn-sm {
+  margin: 0 0.25rem;
+}
+
+/* line 57, app/assets/stylesheets/services.scss */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* line 60, app/assets/stylesheets/services.scss */
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* line 65, app/assets/stylesheets/services.scss */
+.form-group .form-control {
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+}
+
+/* line 69, app/assets/stylesheets/services.scss */
+.form-group .form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+/* line 15, app/assets/stylesheets/tickets.scss */
+.tickets-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* line 20, app/assets/stylesheets/tickets.scss */
+.tickets-container h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* line 29, app/assets/stylesheets/tickets.scss */
+.tickets-table {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+/* line 39, app/assets/stylesheets/tickets.scss */
+.tickets-table th {
+  background: #f5f6fa;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* line 50, app/assets/stylesheets/tickets.scss */
+.tickets-table td {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  vertical-align: middle;
+}
+
+/* line 56, app/assets/stylesheets/tickets.scss */
+.tickets-table tr:hover {
+  background-color: rgba(74, 144, 226, 0.05);
+}
+
+/* line 62, app/assets/stylesheets/tickets.scss */
+.ticket-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* line 70, app/assets/stylesheets/tickets.scss */
+.ticket-form .field {
+  margin-bottom: 1.5rem;
+}
+
+/* line 73, app/assets/stylesheets/tickets.scss */
+.ticket-form .field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* line 80, app/assets/stylesheets/tickets.scss */
+.ticket-form .field input[type='text'],
+.ticket-form .field select.form-select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: white;
+}
+
+/* line 90, app/assets/stylesheets/tickets.scss */
+.ticket-form .field input[type='text']:focus,
+.ticket-form .field select.form-select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+/* line 97, app/assets/stylesheets/tickets.scss */
+.ticket-form .field select.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 16px 12px;
+  padding-right: 2.5rem;
+}
+
+/* line 105, app/assets/stylesheets/tickets.scss */
+.ticket-form .field select.form-select:focus {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%234a90e2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+}
+
+/* line 113, app/assets/stylesheets/tickets.scss */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* line 124, app/assets/stylesheets/tickets.scss */
+.btn-primary {
+  background: #4a90e2;
+  color: white;
+}
+
+/* line 128, app/assets/stylesheets/tickets.scss */
+.btn-primary:hover {
+  background: #2275d7;
+  transform: translateY(-1px);
+}
+
+/* line 134, app/assets/stylesheets/tickets.scss */
+.btn-secondary {
+  background: #f5f6fa;
+  color: #2c3e50;
+}
+
+/* line 138, app/assets/stylesheets/tickets.scss */
+.btn-secondary:hover {
+  background: #e4e7f2;
+}
+
+/* line 143, app/assets/stylesheets/tickets.scss */
+.btn-danger {
+  background: #e74c3c;
+  color: white;
+}
+
+/* line 147, app/assets/stylesheets/tickets.scss */
+.btn-danger:hover {
+  background: #d62c1a;
+}
+
+/* line 155, app/assets/stylesheets/tickets.scss */
+.ticket-details .card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+
+/* line 161, app/assets/stylesheets/tickets.scss */
+.ticket-details .card .card-body {
+  padding: 2rem;
+}
+
+/* line 164, app/assets/stylesheets/tickets.scss */
+.ticket-details .card .card-body p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* line 168, app/assets/stylesheets/tickets.scss */
+.ticket-details .card .card-body p strong {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+/* line 179, app/assets/stylesheets/tickets.scss */
+.flash-message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* line 185, app/assets/stylesheets/tickets.scss */
+.flash-message.notice {
+  background: rgba(46, 204, 113, 0.1);
+  color: #2ecc71;
+  border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+/* line 191, app/assets/stylesheets/tickets.scss */
+.flash-message.alert {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+/* line 199, app/assets/stylesheets/tickets.scss */
+#error_explanation {
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* line 206, app/assets/stylesheets/tickets.scss */
+#error_explanation h2 {
+  color: #e74c3c;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* line 212, app/assets/stylesheets/tickets.scss */
+#error_explanation ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+/* line 216, app/assets/stylesheets/tickets.scss */
+#error_explanation ul li {
+  color: #e74c3c;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  /* line 225, app/assets/stylesheets/tickets.scss */
+  .tickets-container {
+    padding: 1rem;
+  }
+  /* line 230, app/assets/stylesheets/tickets.scss */
+  .tickets-table th, .tickets-table td {
+    padding: 0.75rem;
+  }
+  /* line 235, app/assets/stylesheets/tickets.scss */
+  .btn {
+    padding: 0.6rem 1.2rem;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * in this directory and subdirectories. You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS files in this directory.
+ *
+
+
+ */

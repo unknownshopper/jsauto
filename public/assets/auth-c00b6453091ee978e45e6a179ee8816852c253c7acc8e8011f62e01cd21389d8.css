@@ -1,0 +1,157 @@
+/* line 1, app/assets/stylesheets/auth.scss */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+}
+
+/* line 10, app/assets/stylesheets/auth.scss */
+.auth-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* line 19, app/assets/stylesheets/auth.scss */
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* line 23, app/assets/stylesheets/auth.scss */
+.auth-header .auth-logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* line 29, app/assets/stylesheets/auth.scss */
+.auth-header h2 {
+  color: #2c3e50;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* line 35, app/assets/stylesheets/auth.scss */
+.auth-header p {
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+/* line 42, app/assets/stylesheets/auth.scss */
+.auth-form .field {
+  margin-bottom: 1.5rem;
+}
+
+/* line 45, app/assets/stylesheets/auth.scss */
+.auth-form .field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #34495e;
+  font-weight: 500;
+}
+
+/* line 52, app/assets/stylesheets/auth.scss */
+.auth-form .field input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* line 60, app/assets/stylesheets/auth.scss */
+.auth-form .field input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* line 68, app/assets/stylesheets/auth.scss */
+.auth-form .actions {
+  margin-top: 2rem;
+}
+
+/* line 71, app/assets/stylesheets/auth.scss */
+.auth-form .actions input[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* line 83, app/assets/stylesheets/auth.scss */
+.auth-form .actions input[type="submit"]:hover {
+  background-color: #2275d7;
+}
+
+/* line 90, app/assets/stylesheets/auth.scss */
+.auth-links {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* line 95, app/assets/stylesheets/auth.scss */
+.auth-links a {
+  color: #4a90e2;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+/* line 100, app/assets/stylesheets/auth.scss */
+.auth-links a:hover {
+  color: #1f69c1;
+}
+
+/* line 107, app/assets/stylesheets/auth.scss */
+.flash-messages {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+/* line 113, app/assets/stylesheets/auth.scss */
+.flash-messages .alert, .flash-messages .notice {
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* line 119, app/assets/stylesheets/auth.scss */
+.flash-messages .alert.alert, .flash-messages .notice.alert {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+/* line 124, app/assets/stylesheets/auth.scss */
+.flash-messages .alert.notice, .flash-messages .notice.notice {
+  background-color: #51cf66;
+  color: white;
+}
+
+@media (max-width: 576px) {
+  /* line 132, app/assets/stylesheets/auth.scss */
+  .auth-container {
+    padding: 2rem;
+  }
+  /* line 137, app/assets/stylesheets/auth.scss */
+  .auth-header h2 {
+    font-size: 1.5rem;
+  }
+}

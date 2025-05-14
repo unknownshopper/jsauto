@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: MyString
+  vehicle: MyString
+  description: MyText
+  status: MyString
+  delivery_date: 2025-05-13 17:45:09
+
+two:
+  client: MyString
+  vehicle: MyString
+  description: MyText
+  status: MyString
+  delivery_date: 2025-05-13 17:45:09

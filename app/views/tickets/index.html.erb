@@ -5,9 +5,111 @@
     </div>
   <% end %>
 
+ 
+
+  <div class="filters-section card mb-4">
+    <div class="card-body">
+      <%= form_tag tickets_path, method: :get, class: 'search-form' do %>
+        <div class="search-row">
+          <div class="search-field">
+            <label class="form-label">Buscar</label>
+            <%= text_field_tag :buscar, params[:buscar], class: 'form-control',
+                placeholder: 'Cliente, vehículo o placas...' %>
+          </div>
+
+          <div class="search-field">
+            <label class="form-label">Tipo de Servicio</label>
+            <%= select_tag :servicio,
+                options_for_select(Ticket::SERVICIOS_DISPONIBLES, params[:servicio]),
+                prompt: 'Todos los servicios',
+                class: 'form-select' %>
+          </div>
+
+          <div class="search-field">
+            <label class="form-label">Fecha Desde</label>
+            <%= date_field_tag :fecha_desde, params[:fecha_desde], class: 'form-control' %>
+          </div>
+
+          <div class="search-field">
+            <label class="form-label">Fecha Hasta</label>
+            <%= date_field_tag :fecha_hasta, params[:fecha_hasta], class: 'form-control' %>
+          </div>
+
+          <div class="search-actions">
+            <%= submit_tag 'Filtrar', class: 'btn btn-primary' %>
+            <%= link_to 'Limpiar', tickets_path, class: 'btn btn-secondary' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Servicios por Tipo</h5>
+          <%= pie_chart @tickets_by_service,
+              colors: ["#4361ee", "#3f37c9", "#28a745", "#ffc107"],
+              legend: "bottom",
+              donut: true %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Línea de Tiempo de Servicios</h5>
+          <div id="delivery-timeline" class="timeline-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% content_for :head do %>
+    <link href="https://unpkg.com/vis-timeline@7.7.2/dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vis-timeline@7.7.2/dist/vis-timeline-graph2d.min.js"></script>
+  <% end %>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var container = document.getElementById('delivery-timeline');
+      var items = new vis.DataSet(<%= raw @delivery_timeline.to_json %>);
+
+      var options = {
+        height: '300px',
+        locale: 'es',
+        verticalScroll: true,
+        horizontalScroll: true,
+        stack: true,
+        showCurrentTime: true,
+        margin: {
+          item: {
+            horizontal: 5,
+            vertical: 8
+          }
+        },
+        format: {
+          minorLabels: {
+            day: 'D',
+            month: 'MMM'
+          },
+          majorLabels: {
+            day: 'MMMM YYYY',
+            month: 'YYYY'
+          }
+        }
+      };
+
+      var timeline = new vis.Timeline(container, items, options);
+    });
+  </script>
+
   <div class="header-actions">
     <h1>Lista de Tickets</h1>
-    <%= link_to 'Nuevo Ticket', new_ticket_path, class: 'btn btn-primary' %>
+    <%= link_to new_ticket_path, class: 'btn btn-primary' do %>
+      <i class="fas fa-plus-circle me-2"></i> Nuevo Ticket
+    <% end %>
   </div>
 
   <table class="tickets-table">
@@ -18,6 +120,7 @@
         <th>Placas</th>
         <th>Servicio</th>
         <th>Fecha de Ingreso</th>
+        <th>Fecha de Entrega</th>
         <th>Acciones</th>
       </tr>
     </thead>
@@ -28,7 +131,8 @@
           <td><%= ticket.vehiculo %></td>
           <td><%= ticket.placas %></td>
           <td><%= ticket.servicio %></td>
-          <td><%= ticket.fecha_ingreso.strftime('%d/%m/%Y %H:%M') %></td>
+          <td><%= ticket.fecha_ingreso&.strftime('%d/%m/%Y %H:%M') %></td>
+          <td><%= ticket.fecha_entrega&.strftime('%d/%m/%Y') %></td>
           <td class="actions">
             <%= link_to 'Ver', ticket_path(ticket), class: 'btn btn-secondary btn-sm' %>
             <%= link_to 'Editar', edit_ticket_path(ticket), class: 'btn btn-primary btn-sm' %>
